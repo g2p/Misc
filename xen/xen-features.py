@@ -26,6 +26,7 @@ with open(__file__) as data:
         if decfeatures & (1 << bit):
           print "enabled:", name[8:]
 
+# http://xenbits.xen.org/docs/unstable-staging/hypercall/x86_64/include,public,features.h.html
 # __DATA__
 #define XENFEAT_writable_page_tables       0
 #define XENFEAT_writable_descriptor_tables 1
@@ -33,6 +34,8 @@ with open(__file__) as data:
 #define XENFEAT_supervisor_mode_kernel     3
 #define XENFEAT_pae_pgdir_above_4gb        4
 #define XENFEAT_mmu_pt_update_preserve_ad  5
+#define XENFEAT_highmem_assist             6
+#define XENFEAT_gnttab_map_avail_bits      7
 #define XENFEAT_hvm_callback_vector        8
 #define XENFEAT_hvm_safe_pvclock           9
 #define XENFEAT_hvm_pirqs           10
